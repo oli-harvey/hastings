@@ -906,28 +906,24 @@ source = { virtual = "." }
 dependencies = [
     { name = "ipykernel" },
     { name = "jupyter" },
-    { name = "numpy" },
     { name = "pandas", version = "2.0.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9' or python_full_version >= '3.12'" },
     { name = "pandas", version = "2.3.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9' and python_full_version < '3.12'" },
     { name = "pandas-profiling" },
+    { name = "plotly" },
     { name = "scikit-learn" },
-    { name = "scipy" },
     { name = "xgboost", version = "2.1.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "xgboost", version = "3.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
-    { name = "ydata-profiling" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "jupyter", specifier = ">=1.1.1" },
-    { name = "numpy", specifier = ">=1.24.0,<2.0.0" },
     { name = "pandas" },
     { name = "pandas-profiling" },
-    { name = "scikit-learn", specifier = ">=1.3.0,<1.4.0" },
-    { name = "scipy", specifier = ">=1.10.0,<1.11.0" },
+    { name = "plotly", specifier = ">=6.2.0" },
+    { name = "scikit-learn" },
     { name = "xgboost", specifier = ">=2.0.0" },
-    { name = "ydata-profiling" },
 ]
 
 [[package]]
@@ -2253,6 +2249,34 @@ wheels = [
 ]
 
 [[package]]
+name = "narwhals"
+version = "1.42.1"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.9' and sys_platform == 'win32'",
+    "python_full_version < '3.9' and sys_platform != 'win32'",
+]
+sdist = { url = "https://files.pythonhosted.org/packages/df/d6/168a787b7800d6c89846b791e4f5ee6b94998a80c8c2838a019d3d71984d/narwhals-1.42.1.tar.gz", hash = "sha256:50a5635b11aeda98cf9c37e839fd34b0a24159f59a4dfae930290ad698320494", size = 492865, upload-time = "2025-06-12T15:15:13.222Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/79/3f/8d450588206b437dd239a6d44230c63095e71135bd95d5a74347d07adbd5/narwhals-1.42.1-py3-none-any.whl", hash = "sha256:7a270d44b94ccdb277a799ae890c42e8504c537c1849f195eb14717c6184977a", size = 359888, upload-time = "2025-06-12T15:15:11.643Z" },
+]
+
+[[package]]
+name = "narwhals"
+version = "1.45.0"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version >= '3.12'",
+    "python_full_version == '3.11.*'",
+    "python_full_version == '3.10.*'",
+    "python_full_version == '3.9.*'",
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4c/9f/284886c5cea849b4ed1c55babcb48cb1084886139e8ac31e9849112ce6d0/narwhals-1.45.0.tar.gz", hash = "sha256:f9ecefb9d09cda6fefa8ead10dc37a79129b6c78b0ac7117d21b4d4486bdd0d1", size = 508812, upload-time = "2025-07-01T11:26:07.114Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fe/a4/337a229d184b23ee63e6b730ac1588d77067af77c550dbf69cf1d74c3298/narwhals-1.45.0-py3-none-any.whl", hash = "sha256:0585612aa7ec89f9d061e78410b6fb8772794389d1a29d5799572d6b81999497", size = 371633, upload-time = "2025-07-01T11:26:05.409Z" },
+]
+
+[[package]]
 name = "nbclient"
 version = "0.10.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2772,7 +2796,7 @@ name = "pexpect"
 version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "ptyprocess" },
+    { name = "ptyprocess", marker = "python_full_version >= '3.9' or sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz", hash = "sha256:ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f", size = 166450, upload-time = "2023-11-25T09:07:26.339Z" }
 wheels = [
@@ -3070,6 +3094,20 @@ resolution-markers = [
 sdist = { url = "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz", hash = "sha256:3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc", size = 21362, upload-time = "2025-05-07T22:47:42.121Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fe/39/979e8e21520d4e47a0bbe349e2713c0aac6f3d853d0e5b34d76206c439aa/platformdirs-4.3.8-py3-none-any.whl", hash = "sha256:ff7059bb7eb1179e2685604f4aaf157cfd9535242bd23742eadc3c13542139b4", size = 18567, upload-time = "2025-05-07T22:47:40.376Z" },
+]
+
+[[package]]
+name = "plotly"
+version = "6.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "narwhals", version = "1.42.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "narwhals", version = "1.45.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "packaging" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6e/5c/0efc297df362b88b74957a230af61cd6929f531f72f48063e8408702ffba/plotly-6.2.0.tar.gz", hash = "sha256:9dfa23c328000f16c928beb68927444c1ab9eae837d1fe648dbcda5360c7953d", size = 6801941, upload-time = "2025-06-26T16:20:45.765Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ed/20/f2b7ac96a91cc5f70d81320adad24cc41bf52013508d649b1481db225780/plotly-6.2.0-py3-none-any.whl", hash = "sha256:32c444d4c940887219cb80738317040363deefdfee4f354498cc0b6dab8978bd", size = 9635469, upload-time = "2025-06-26T16:20:40.76Z" },
 ]
 
 [[package]]
