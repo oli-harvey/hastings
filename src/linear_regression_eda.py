@@ -3,11 +3,11 @@ import statsmodels.api as sm
 
 def linear_regression_eda(
     df
-    , cat_col=None
-    , count_cols=None
-    , cont_cols=None
-    , target_col='capped_incurred'
-    , recent=False
+  , cat_col=None
+  , count_cols=None
+  , cont_cols=None
+  , target_col='capped_incurred'
+  , recent=False
 ):
     all_cols = [target_col, 'date_of_loss']
     if cat_col is not None:
@@ -51,7 +51,6 @@ def linear_regression_eda(
     y = pd.to_numeric(df[target_col], errors='coerce')
     valid_idx = X.notna().all(axis=1) & y.notna()
 
-    # Fix: ensure final inputs are float to avoid ValueError
     X = X.loc[valid_idx].astype(float)
     y = y.loc[valid_idx].astype(float)
 
@@ -61,3 +60,5 @@ def linear_regression_eda(
     if cat_col is not None:
         print(f"  Reference category (intercept group): '{ref}'\n")
     print(model.summary())
+
+    return model.rsquared
