@@ -8,6 +8,7 @@ def linear_regression_eda(
   , cont_cols=None
   , target_col='capped_incurred'
   , recent=False
+  , show_chart=True
 ):
     all_cols = [target_col, 'date_of_loss']
     if cat_col is not None:
@@ -56,9 +57,10 @@ def linear_regression_eda(
 
     model = sm.OLS(y, X).fit()
 
-    print(f"\nLinear Regression vs '{target_col}'" + (" (since 2012)" if recent else "") + ":")
-    if cat_col is not None:
-        print(f"  Reference category (intercept group): '{ref}'\n")
-    print(model.summary())
+    if show_chart:
+        print(f"\nLinear Regression vs '{target_col}'" + (" (since 2012)" if recent else "") + ":")
+        if cat_col is not None:
+            print(f"  Reference category (intercept group): '{ref}'\n")
+        print(model.summary())
 
     return model.rsquared
