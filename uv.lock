@@ -1197,10 +1197,10 @@ dependencies = [
     { name = "catboost" },
     { name = "ipykernel" },
     { name = "jupyter" },
+    { name = "lightgbm" },
     { name = "optuna" },
     { name = "pandas", version = "2.0.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "pandas", version = "2.3.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
-    { name = "pandas-profiling" },
     { name = "plotly" },
     { name = "prophet" },
     { name = "pyarrow", version = "17.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
@@ -1210,6 +1210,7 @@ dependencies = [
     { name = "scikit-learn", version = "1.7.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "statsmodels", version = "0.14.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "statsmodels", version = "0.14.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "ydata-profiling" },
 ]
 
 [package.metadata]
@@ -1217,14 +1218,15 @@ requires-dist = [
     { name = "catboost", specifier = ">=1.2.8" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "lightgbm", specifier = ">=4.6.0" },
     { name = "optuna", specifier = ">=4.4.0" },
     { name = "pandas" },
-    { name = "pandas-profiling", specifier = ">=3.6.6" },
     { name = "plotly", specifier = ">=6.2.0" },
     { name = "prophet", specifier = ">=1.1.7" },
     { name = "pyarrow", specifier = ">=17.0.0" },
     { name = "scikit-learn", specifier = ">=0.22" },
     { name = "statsmodels", specifier = ">=0.14.1" },
+    { name = "ydata-profiling", specifier = ">=4.2.0" },
 ]
 
 [[package]]
@@ -2279,6 +2281,27 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/5d/eb/78d50346c51db22c7203c1611f9b513075f35c4e0e4877c5dde378d66043/kiwisolver-1.4.8-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7cd2785b9391f2873ad46088ed7599a6a71e762e1ea33e87514b1a441ed1da1c", size = 81186, upload-time = "2024-12-24T18:30:45.654Z" },
     { url = "https://files.pythonhosted.org/packages/43/f8/7259f18c77adca88d5f64f9a522792e178b2691f3748817a8750c2d216ef/kiwisolver-1.4.8-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c07b29089b7ba090b6f1a669f1411f27221c3662b3a1b7010e67b59bb5a6f10b", size = 80279, upload-time = "2024-12-24T18:30:47.951Z" },
     { url = "https://files.pythonhosted.org/packages/3a/1d/50ad811d1c5dae091e4cf046beba925bcae0a610e79ae4c538f996f63ed5/kiwisolver-1.4.8-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:65ea09a5a3faadd59c2ce96dc7bf0f364986a315949dc6374f04396b0d60e09b", size = 71762, upload-time = "2024-12-24T18:30:48.903Z" },
+]
+
+[[package]]
+name = "lightgbm"
+version = "4.6.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy", version = "1.24.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "numpy", version = "2.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
+    { name = "numpy", version = "2.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "scipy", version = "1.10.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "scipy", version = "1.13.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
+    { name = "scipy", version = "1.15.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/68/0b/a2e9f5c5da7ef047cc60cef37f86185088845e8433e54d2e7ed439cce8a3/lightgbm-4.6.0.tar.gz", hash = "sha256:cb1c59720eb569389c0ba74d14f52351b573af489f230032a1c9f314f8bab7fe", size = 1703705, upload-time = "2025-02-15T04:03:03.111Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f2/75/cffc9962cca296bc5536896b7e65b4a7cdeb8db208e71b9c0133c08f8f7e/lightgbm-4.6.0-py3-none-macosx_10_15_x86_64.whl", hash = "sha256:b7a393de8a334d5c8e490df91270f0763f83f959574d504c7ccb9eee4aef70ed", size = 2010151, upload-time = "2025-02-15T04:02:50.961Z" },
+    { url = "https://files.pythonhosted.org/packages/21/1b/550ee378512b78847930f5d74228ca1fdba2a7fbdeaac9aeccc085b0e257/lightgbm-4.6.0-py3-none-macosx_12_0_arm64.whl", hash = "sha256:2dafd98d4e02b844ceb0b61450a660681076b1ea6c7adb8c566dfd66832aafad", size = 1592172, upload-time = "2025-02-15T04:02:53.937Z" },
+    { url = "https://files.pythonhosted.org/packages/64/41/4fbde2c3d29e25ee7c41d87df2f2e5eda65b431ee154d4d462c31041846c/lightgbm-4.6.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:4d68712bbd2b57a0b14390cbf9376c1d5ed773fa2e71e099cac588703b590336", size = 3454567, upload-time = "2025-02-15T04:02:56.443Z" },
+    { url = "https://files.pythonhosted.org/packages/42/86/dabda8fbcb1b00bcfb0003c3776e8ade1aa7b413dff0a2c08f457dace22f/lightgbm-4.6.0-py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:cb19b5afea55b5b61cbb2131095f50538bd608a00655f23ad5d25ae3e3bf1c8d", size = 3569831, upload-time = "2025-02-15T04:02:58.925Z" },
+    { url = "https://files.pythonhosted.org/packages/5e/23/f8b28ca248bb629b9e08f877dd2965d1994e1674a03d67cd10c5246da248/lightgbm-4.6.0-py3-none-win_amd64.whl", hash = "sha256:37089ee95664b6550a7189d887dbf098e3eadab03537e411f52c63c121e3ba4b", size = 1451509, upload-time = "2025-02-15T04:03:01.515Z" },
 ]
 
 [[package]]
@@ -3411,18 +3434,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/f7/74/7e817b31413fbb96366ea327d43d1926a9c48c58074e27e094e2839a0e36/pandas-2.3.1-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:09e3b1587f0f3b0913e21e8b32c3119174551deb4a4eba4a89bc7377947977e7", size = 13225086, upload-time = "2025-07-07T19:19:56.378Z" },
     { url = "https://files.pythonhosted.org/packages/1f/0f/bc0a44b47eba2f22ae4235719a573d552ef7ad76ed3ea39ae62d554e040b/pandas-2.3.1-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:2323294c73ed50f612f67e2bf3ae45aea04dce5690778e08a09391897f35ff88", size = 13871698, upload-time = "2025-07-07T19:19:58.854Z" },
     { url = "https://files.pythonhosted.org/packages/fa/cb/6c32f8fadefa4314b740fbe8f74f6a02423bd1549e7c930826df35ac3c1b/pandas-2.3.1-cp39-cp39-win_amd64.whl", hash = "sha256:b4b0de34dc8499c2db34000ef8baad684cfa4cbd836ecee05f323ebfba348c7d", size = 11357186, upload-time = "2025-07-07T19:20:01.475Z" },
-]
-
-[[package]]
-name = "pandas-profiling"
-version = "3.6.6"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "ydata-profiling" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/34/c0/cd405caab2739ced0161ef4f7bed55d73aaf6e0554b95f4dd21088d94710/pandas-profiling-3.6.6.tar.gz", hash = "sha256:1ef14a9cfa647ff95e13fd0b589f74897c0b078ef8ebcd44760b4031dcbf52a2", size = 253494, upload-time = "2023-01-31T11:18:17.058Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ac/cb/f038b9b57c6edaaf6f4e400b0bb1d954bc08dc6bc61a4b0861acecd3789c/pandas_profiling-3.6.6-py2.py3-none-any.whl", hash = "sha256:69297626426358672ccbb357abbfea7fa35a7feda4388dd6377bd521d15cfaf2", size = 324362, upload-time = "2023-01-31T11:18:15.367Z" },
 ]
 
 [[package]]

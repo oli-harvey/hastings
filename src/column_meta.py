@@ -29,14 +29,15 @@ class ColumnMetaOrganiser:
     def filter_df(self, df, cols: List[str]):
         return df.loc[:, cols]
 
-    def summarise_concepts(self) -> pd.DataFrame:
+    def summarise_cols(self) -> pd.DataFrame:
         rows: List[Tuple[str, str, int, float]] = []
         for (concept, encoding), group in self._group_by_concept_encoding().items():
             count = len(group)
-            avg_r2 = sum(c.eda_reg_r2 for c in group) / count
+            r2_values = [c.eda_reg_r2 for c in group]
+            avg_r2 = sum(r2_values) / count if all(pd.notnull(r2_values)) else None
             rows.append((concept, encoding, count, avg_r2))
         summary_df = pd.DataFrame(rows, columns=["concept", "encoding", "n_cols", "avg_r2"])
-        return summary_df.sort_values(by="avg_r2", ascending=False).reset_index(drop=True)
+        return summary_df.sort_values(by="avg_r2", ascending=False, na_position="last").reset_index(drop=True)
 
     def _group_by_concept_encoding(self):
         grouped = {}
