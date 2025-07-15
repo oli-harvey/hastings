@@ -1,5 +1,17 @@
 # hastings
 
-You may have to install a dependency for xgboost, Im not sure - I did. Otherwise it gives a weird error about not running 64bit python
+- Issues identified with the data and how these were addressed
+- Data cleansing
+* Data cleaning - dodgy characters stripped
+* Some features constant - dropped
+* Incomplete coverage of features and inconsistent distribution - marked those as recent coverage only
+* Latest weather not reliable - did not fix but could have used external data joined on date
 
-`brew install libomp`
+
+- Model specification and justification for selecting this model specification
+- Assessment of your model's accuracy and model diagnostics
+- Suggestions of how your model could be improved
+* Bayesian causal approach
+* 
+- Practical challenges for implementing your model
+* Lots of grouped count variables - tried adding mean target encoding to summarise
